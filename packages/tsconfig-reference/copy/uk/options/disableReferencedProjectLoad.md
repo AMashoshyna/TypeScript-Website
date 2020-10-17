@@ -1,8 +1,8 @@
 ---
 display: "disableReferencedProjectLoad"
-oneline: "Reduces the number of projects loaded automatically by TypeScript"
+oneline: "Скоротити кількість автоматично завантажениї проєктів"
 ---
 
-In multi-project TypeScript programs, TypeScript will load all of the available projects into memory in order to provide accurate results for editor responses which require a full knowledge graph like 'Find All References'.
+У мультипроєктних програмах TypeScript завантажує всі доступні проєкти в пам’ять, щоб забезпечити точні результати для функцій редактора, що потребують повного графу знань, наприклад, „Знайти всі посилання”.
 
-If your project is large, you can use the flag `disableReferencedProjectLoad` to disable the automatic loading of all projects. Instead, projects are loaded dynamically as you open files through your editor.
+Якщо ваш проект великий, ви можете використовувати прапор `disableReferencedProjectLoad`, щоб вимкнути автоматичне завантаження всіх проєктів. Натомість проєкти завантажуватимуться динамічно під час відкриття файлів у редакторі.

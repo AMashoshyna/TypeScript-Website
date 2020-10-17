@@ -1,16 +1,16 @@
 ---
-display: "Allow JS"
-oneline: "Let TS include .JS files in imports"
+display: "Дозволити JS"
+oneline: "Дозволяє TS включати імпорт .JS-файлів"
 ---
 
-Allow JavaScript files to be imported inside your project, instead of just `.ts` and `.tsx` files. For example, this JS file:
+Дозволяє імпортувати в проєкт не лише файли .ts та .tsx, але також JavaScript-файли. Наприклад, такий JS-файл:
 
 ```js twoslash
 // @filename: card.js
 export const defaultCardDeck = "Heart";
 ```
 
-When imported into a TypeScript file will raise an error:
+При імпорті у TypeScript-файл він викличе помилку:
 
 ```ts twoslash
 // @errors: 2307
@@ -23,7 +23,7 @@ import { defaultCardDeck } from "./card";
 console.log(defaultCardDeck);
 ```
 
-Imports fine with `allowJs` enabled:
+З активованою опцією `allowJs` імпорт дозволено:
 
 ```ts twoslash
 // @filename: card.js
@@ -36,4 +36,4 @@ import { defaultCardDeck } from "./card";
 console.log(defaultCardDeck);
 ```
 
-This flag can be used as a way to incrementally add TypeScript files into JS projects by allowing the `.ts` and `.tsx` files to live along-side existing JavaScript files.
+Цей прапор дозволяє `.ts`- та `.tsx`-файлам існувати поряд з файлами на JavaScript, тому його можна використовувати як спосіб поступово додавати TypeScript-файли до JS-проєктів.

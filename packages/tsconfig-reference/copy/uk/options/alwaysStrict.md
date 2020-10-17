@@ -1,8 +1,8 @@
 ---
-display: "Always Strict"
-oneline: "Ensure 'use strict' is always emitted"
+display: "Лише суворий режим"
+oneline: "Завжди додавати 'use strict'"
 ---
 
-Ensures that your files are parsed in the ECMAScript strict mode, and emit "use strict" for each source file.
+Забезпечує парсинг ваших файлів у суворому режимі (strict mode) ECMAScript та додає "use strict" до кожного вихідного файлу.
 
-[ECMAScript strict](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode) mode was introduced in ES5 and provides behavior tweaks to the runtime of the JavaScript engine to improve performance, and makes a set of errors throw instead of silently ignoring them.
+Суворий режим [ECMAScript strict mode](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode) був введений в ES5. Він забезпечує деякі зміни середовища виконання рушія JavaScript для підвищення продуктивності. Також певний набір помилок не буде мовчки проігноровано, натомість буде викинуто помилку.

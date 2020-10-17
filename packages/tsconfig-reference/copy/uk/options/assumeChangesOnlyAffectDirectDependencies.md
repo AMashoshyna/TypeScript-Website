@@ -1,8 +1,8 @@
 ---
-display: "Assume Changes Only Affect Direct Dependencies"
-oneline: "A drastically faster, but occasionally inaccurate watch mode option."
+display: "Припускати, що зміни впливають лише на безпосередні залежності"
+oneline: "Значно швидший, але іноді неточний варіант режиму спостереження"
 ---
 
-When this option is enabled, TypeScript will avoid rechecking/rebuilding all truly possibly-affected files, and only recheck/rebuild files that have changed as well as files that directly import them.
+Якщо цю опцію ввімкнено, TypeScript уникатиме повторної перевірки або повторного збирання всіх файлів, які цього потребують і натомість перевірятиме або збиратиме лише файли, які змінилися, а також файли, які безпосередньо імпортують ці змінені файли.
 
-This can be considered a 'fast & loose' implementation of the watching algorithm, which can drastically reduce incremental rebuild times at the expense of having to run the full build occasionally to get all compiler error messages.
+Можно вважати це "швидкою та приблизною" реалізацією алгоритму спостереження, яка може різко зменшити час поступового збирання за рахунок необхідності періодичного запуску повної збірки для отримання всіх повідомлень про помилки компілятора.

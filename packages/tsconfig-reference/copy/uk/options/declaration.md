@@ -1,26 +1,26 @@
 ---
-display: "Declaration"
-oneline: "Emit d.ts files for referenced files in the project"
+display: "Декларації"
+oneline: "Створити файли d.ts для файлів проєкту"
 ---
 
-Generate `.d.ts` files for every TypeScript or JavaScript file inside your project.
-These `.d.ts` files are type definition files which describe the external API of your module.
-With `.d.ts` files, tools like TypeScript can provide intellisense and accurate types for un-typed code.
+Створює файли `.d.ts` для кожного файлу на TypeScript або на JavaScript у проєкті.
+Ці файли .d.ts - це файли визначення типів, які описують зовнішній інтерфейс вашого модуля.
+За допомогою файлів .d.ts такі інструменти, як TypeScript, можуть забезпечувати автодоповнення та точне виведення типів для нетипізованого коду.
 
-When `declaration` is set to `true`, running the compiler with this TypeScript code:
+Коли `declaration` має значення `true`, запуск компілятора на цьому коді
 
 ```ts twoslash
 export let helloWorld = "hi";
 ```
 
-Will generate an `index.js` file like this:
+згенерує такий `index.js`:
 
 ```ts twoslash
 // @showEmit
 export let helloWorld = "hi";
 ```
 
-With a corresponding `helloWorld.d.ts`:
+А також відповідний `helloWorld.d.ts`:
 
 ```ts twoslash
 // @showEmittedFile: index.d.ts
@@ -29,4 +29,4 @@ With a corresponding `helloWorld.d.ts`:
 export let helloWorld = "hi";
 ```
 
-When working with `.d.ts` files for JavaScript files you may want to use [`emitDeclarationOnly`](#emitDeclarationOnly) or use [`outDir`](#outDir) to ensure that the JavaScript files are not overwritten.
+При роботі з `.d.ts`-файлами для JavaScript ми радимо використовувати [`emitDeclarationOnly`](#emitDeclarationOnly) або [`outDir`](#outDir), щоб попередити випадкове переписування JavaScript-файлів.

@@ -1,19 +1,18 @@
 ---
-display: "Check JS"
-oneline: "Run the type checker on .js files in your project"
+display: "Перевірка JS"
+oneline: "Перевірити типи у .js-файлах проєкту"
 ---
 
-Works in tandem with `allowJs`. When `checkJs` is enabled then errors are reported in JavaScript files. This is
-the equivalent of including `// @ts-check` at the top of all JavaScript files which are included in your project.
+Працює в тандемі з `allowJs`. Коли увімкнено функцію `checkJs`, виводяться повідомлення про помилки у файлах на JavaScript. Це еквівалент `// @ ts-check` на початку всіх JavaScript-файлів вашого проєкту.
 
-For example, this is incorrect JavaScript according to the `parseFloat` type definition which comes with TypeScript:
+Наприклад, відповідно до визначення типу `parseFloat`, яке існує з TypeScript, цей JavaScript-код є помилковим:
 
 ```js
 // parseFloat only takes a string
 module.exports.pi = parseFloat(3.124);
 ```
 
-When imported into a TypeScript module:
+Після імпорту у модуль на TypeScript:
 
 ```ts twoslash
 // @allowJs
@@ -25,7 +24,7 @@ import { pi } from "./constants";
 console.log(pi);
 ```
 
-You will not get any errors. However, if you turn on `checkJs` then you will get error messages from the JavaScript file.
+Так помилок не буде. Але якщо увімкнути `checkJs`, то ви побачите помилку у JavaScript-файлі.
 
 ```ts twoslash
 // @errors: 2345

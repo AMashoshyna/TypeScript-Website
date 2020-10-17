@@ -1,17 +1,16 @@
 ---
 display: "Composite"
-oneline: "Used to create multiple build projects"
+oneline: "Застосовується для створення кількох проєктів для збірки"
 ---
 
-The `composite` option enforces certain constraints which make it possible for build tools (including TypeScript
-itself, under `--build` mode) to quickly determine if a project has been built yet.
+Параметр `composite` застосовує певні обмеження, які дозволяють інструментам збірки, зокрема самому TypeScript у режимі `--build`, швидко визначити, чи проєкт вже зібрано.
 
-When this setting is on:
+Коли цей параметр увімкнено:
 
-- The `rootDir` setting, if not explicitly set, defaults to the directory containing the `tsconfig.json` file.
+- Параметр `rootDir`, якщо не встановлений явно, за замовчуванням вказує на директорію, що містить файл `tsconfig.json`.
 
-- All implementation files must be matched by an `include` pattern or listed in the `files` array. If this constraint is violated, `tsc` will inform you which files weren't specified.
+- Усі файли реалізації повинні відповідати шаблону `include` або перелічуватися в масиві `files`. Якщо це обмеження буде порушено, `tsc` повідомить вам, які файли не вказані.
 
-- `declaration` defaults to `true`
+- за замовчуванням для `declaration` встановлено значення "true"
 
-You can find documentation on TypeScript projects in [the handbook](https://www.typescriptlang.org/docs/handbook/project-references.html).
+Ви можете знайти документацію щодо TypeScript-проєктів у [довіднику](https://www.typescriptlang.org/docs/handbook/project-references.html).

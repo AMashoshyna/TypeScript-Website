@@ -1,15 +1,15 @@
 ---
-display: "Allow Unreachable Code"
-oneline: "Error when code will never be called"
+display: "Дозволити недосяжний код"
+oneline: "Код, що ніколе не буде виконаний, викличе помилку"
 ---
 
-When:
+У таких випадках, як:
 
-- `undefined` (default) provide suggestions as warnings to editors
-- `true` unreachable code is ignored
-- `false` raises compiler errors about unreachable code
+- `undefined` (значення за замовчуванням) редактор показує рекомендації у формі попереджень
+- `true` недосяжний код ігнорується
+- `false` викликає помилки компіляції через недосяжний код
 
-These warnings are only about code which is provably unreachable due to the use of JavaScript syntax, for example:
+Ці попередження стосуються лише коду, який виявляється недосяжним через використання синтаксису JavaScript, наприклад:
 
 ```ts
 function fn(n: number) {
@@ -22,7 +22,7 @@ function fn(n: number) {
 }
 ```
 
-With `"allowUnreachableCode": false`:
+Із `"allowUnreachableCode": false`:
 
 ```ts twoslash
 // @errors: 7027
@@ -37,4 +37,4 @@ function fn(n: number) {
 }
 ```
 
-This does not affect errors on the basis of code which _appears_ to be unreachable due to type analysis.
+Це не впливає на помилки щодо коду, який _здається_ недоступним на основі аналізу типів.

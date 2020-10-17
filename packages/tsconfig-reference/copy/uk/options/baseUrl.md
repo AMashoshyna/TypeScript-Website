@@ -1,11 +1,11 @@
 ---
-display: "Base Url"
-oneline: "Set a baseurl for relative module names"
+display: "Базовий Url"
+oneline: "Встановити базовий url для відносних імен модулів"
 ---
 
-Lets you set a base directory to resolve non-absolute module names.
+Дозволяє встановити базову директорію для розв'язання не-абсолютних імен модулів.
 
-You can define a root folder where you can do absolute file resolution. E.g.
+Ви можете визначити кореневу директорію, всередині якої можна робити абсолютне розв'язання файлів. Наприклад
 
 ```
 baseUrl
@@ -15,7 +15,7 @@ baseUrl
 └── tsconfig.json
 ```
 
-With `"baseUrl": "./"` inside this project TypeScript will look for files starting at the same folder as the `tsconfig.json`.
+Із `"baseUrl": "./"` всередині проєкту TypeScript шукатиме файли, починаючи з директорії, в якій знаходиться `tsconfig.json`.
 
 ```ts
 import { helloWorld } from "hello/world";
@@ -23,5 +23,4 @@ import { helloWorld } from "hello/world";
 console.log(helloWorld);
 ```
 
-If you get tired of imports always looking like `"../"` or `"./"`. Or needing
-to change as you move files, this is a great way to fix that.
+Це чудовий спосіб позбутися імпортів, що виглядають як `"../"` або `.. ", та уникнути необхідності міняти імпорти, коли переносите файли.

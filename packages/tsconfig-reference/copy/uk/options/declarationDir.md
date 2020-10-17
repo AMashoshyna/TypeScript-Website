@@ -1,9 +1,9 @@
 ---
-display: "Declaration Dir"
-oneline: "Set the root directory for d.ts files to go"
+display: "Директорія декларацій"
+oneline: "Визначає кореневу видректорію для файлів d.ts"
 ---
 
-Offers a way to configure the root directory for where declaration files are emitted.
+Пропонує можливість вибору кореневої директорії, куди буде збережено деклараційні файли.
 
 ```
 example
@@ -12,7 +12,7 @@ example
 └── tsconfig.json
 ```
 
-with this `tsconfig.json`:
+з таким `tsconfig.json`:
 
 ```json tsconfig
 {
@@ -23,7 +23,7 @@ with this `tsconfig.json`:
 }
 ```
 
-Would place the d.ts for the `index.ts` in a `types` folder:
+розмістить файли d.ts для `index.ts` у директорії `types`:
 
 ```
 example

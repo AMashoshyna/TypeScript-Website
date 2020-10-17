@@ -1,17 +1,17 @@
 ---
-display: "Allow Unused Labels"
-oneline: "Error when accidentally creating a label"
+display: "Дозволити невикористані ярлики"
+oneline: "Випадкове створення ярлика приводить до помилки"
 ---
 
-Set to false to disable warnings about unused labels.
+Значення false вимикає попередження про невикористані ярлики (labels).
 
-Labels are very rare in JavaScript and typically indicate an attempt to write an object literal:
+Ярлики у JavaScript зустрічаються дуже рідко, найчастіше внаслідок невдалої спроби написати літерал об'єка:
 
 ```ts twoslash
 // @errors: 7028
 // @allowUnusedLabels: false
 function verifyAge(age: number) {
-  // Forgot 'return' statement
+  // Тут пропущено 'return'
   if (age > 18) {
     verified: true;
   }

@@ -1,17 +1,17 @@
 ---
 display: "Downlevel Iteration"
-oneline: "Emit more compliant, but verbose JavaScript for iterating objects"
+oneline: "Для ітерації об'єктів генерувати більш сумісний, але багатослівний JavaScript"
 ---
 
-Downleveling is TypeScript's term for transpiling to an older version of JavaScript.
-This flag is to enable support for a more accurate implementation of how modern JavaScript iterates through new concepts in older JavaScript runtimes.
+Downleveling або пониження рівня - це термін, який TypeScript використовує для транспіляції у стару версію JavaScript.
+Цей прапор надає підтримку для більш точної реалізації того, як сучасний JavaScript ітерує об'єкти у старих середовищах JavaScript.
 
-ECMAScript 6 added several new iteration primitives: the `for / of` loop (`for (el of arr)`), Array spread (`[a, ...b]`), argument spread (`fn(...args)`), and `Symbol.iterator`.
-`--downlevelIteration` allows for these iteration primitives to be used more accurately in ES5 environments if a `Symbol.iterator` implementation is present.
+ECMAScript 6 додав кілька нових примітивів ітерацій: цикл `for / of` (`for (el of arr)`), розбір масиву (`[a, ... b]`), розбір аргументів (`fn (... args)`) та`Symbol.iterator`.
+`--downlevelIteration` дозволяє більш точно використовувати ці примітивні ітерації в середовищах ES5, де присутня реалізація `Symbol.iterator`.
 
-#### Example: Effects on `for / of`
+#### Приклад: зміни до `for / of`
 
-Without `downlevelIteration` on, a `for / of` loop on any object is downleveled to a traditional `for` loop:
+Без прапора `downlevelIteration` цикл `for / of` на будь-якому об'єкті перетворюється на традиційний цикл `for`:
 
 ```ts twoslash
 // @target: ES5
@@ -26,8 +26,12 @@ This is often what people expect, but it's not 100% compliant with ECMAScript 6 
 Certain strings, such as emoji (😜), have a `.length` of 2 (or even more!), but should iterate as 1 unit in a `for-of` loop.
 See [this blog post by Jonathan New](https://blog.jonnew.com/posts/poo-dot-length-equals-two) for a longer explanation.
 
-When `downlevelIteration` is enabled, TypeScript will use a helper function that checks for a `Symbol.iterator` implementation (either native or polyfill).
-If this implementation is missing, you'll fall back to index-based iteration.
+Часто люди саме цього і очікують, але це не на 100% відповідає поведінці ECMAScript 6.
+Деякі рядки, такі як смайли (😜), мають `.length` 2 (або навіть більше!), але повинні з'явитися в циклі `for-of` як одна одиниця.
+Див. [цей допис в блозі Джонатана Нью](https://blog.jonnew.com/posts/poo-dot-length-equals-two) для більш детального пояснення.
+
+Коли увімкнено прапор `downlevelIteration`, TypeScript буде використовувати допоміжну функцію, яка перевіряє наявність реалізації `Symbol.iterator` (нативну чи поліфіл).
+Якщо ця реалізація відсутня, ви повернетесь до ітерації на основі індексу.
 
 ```ts twoslash
 // @target: ES5
@@ -39,26 +43,26 @@ for (const s of str) {
 }
 ```
 
-> > **Note:** enabling `downlevelIteration` does not improve compliance if `Symbol.iterator` is not present in the runtime.
+> > **Примітка:** увімкнення `downlevelIteration` не покращує відповідність спецификації, якщо у середовищі виконання відсутній `Symbol.iterator`.
 
-#### Example: Effects on Array Spreads
+#### Приклад: зміни у роботі оператора spread з масивами
 
-This is an array spread:
+Так працює оператор `spread` з масивами:
 
 ```js
 // Make a new array who elements are 1 followed by the elements of arr2
 const arr = [1, ...arr2];
 ```
 
-Based on the description, it sounds easy to downlevel to ES5:
+Виходячи з опису, здається, що привести цей код до стандартів ES5 нескладно:
 
 ```js
 // The same, right?
 const arr = [1].concat(arr2);
 ```
 
-However, this is observably different in certain rare cases.
-For example, if an array has a "hole" in it, the missing index will create an _own_ property if spreaded, but will not if built using `concat`:
+Однак у деяких рідкісних випадках поведінка відрізняється.
+Наприклад, якщо в масиві є "дірка", відсутній індекс створить _свою_ властивість при роботі оператора spread, але не буде цього роботи при створенні масиву з `concat`:
 
 ```js
 // Make an array where the '1' element is missing
@@ -72,4 +76,4 @@ let concated = [].concat(missing);
 "1" in concated;
 ```
 
-Just as with `for / of`, `downlevelIteration` will use `Symbol.iterator` (if present) to more accurately emulate ES 6 behavior.
+Подібно до `for / of`, `downlevelIteration` використовуватиме `Symbol.iterator` (якщо він присутній) для більш точного імітування поведінки ES 6.

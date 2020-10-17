@@ -1,7 +1,7 @@
 ---
-display: "Charset"
-oneline: "Manually set the text encoding for reading files"
+display: "Кодування символів"
+oneline: "Встановити кодування тексту для читання файлів вручну"
 ---
 
-In prior versions of TypeScript, this controlled what encoding was used when reading text files from disk.
-Today, TypeScript assumes UTF-8 encoding, but will correctly detect UTF-16 (BE and LE) or UTF-8 BOMs.
+У попередніх версіях TypeScript цей прапор визначав, яке кодування використовувалось при читанні текстових файлів з диска.
+Сьогодні TypeScript припускає кодування UTF-8, але правильно виявить маркери порядку байтів UTF-16 (BE та LE) або UTF-8.

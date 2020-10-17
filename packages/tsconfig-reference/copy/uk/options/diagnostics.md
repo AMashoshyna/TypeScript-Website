@@ -1,8 +1,8 @@
 ---
-display: "Diagnostics"
-oneline: "Output additional information after a compile"
+display: "Діагностика"
+oneline: "Вивести додаткову інформацію після компіляції"
 ---
 
-Used to output diagnostic information for debugging. This command is a subset of [`extendedDiagnostics`](#extendedDiagnostics) which are more user-facing results, and easier to interpret.
+Використовується для виведення діагностичної інформації для налагодження. Ця команда є вибіркою з набору результатів [`extendedDiagnostics`](#ExtendedDiagnostics), що є більш зручними для користувача та простішими для інтерпретації.
 
-If you have been asked by a TypeScript compiler engineer to give the results using this flag in a compile, in which there is no harm in using [`--extendedDiagnostics`](#extendedDiagnostics) instead.
+Якщо про дані вас попросив інженер-розробник компілятора TypeScript, натомість можна використати флаг [`--extendedDiagnostics`](#extendedDiagnostics).

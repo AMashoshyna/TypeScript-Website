@@ -1,8 +1,8 @@
 ---
 display: "Allow Umd Global Access"
-oneline: "Assume UMD imports are all globally available"
+oneline: "Вважати імпорти UMD доступними глобально"
 ---
 
-When set to true, `allowUmdGlobalAccess` lets you access UMD exports as globals from inside module files. A module file is a file that has imports and/or exports. Without this flag, using an export from a UMD module requires an import declaration.
+`allowUmdGlobalAccess` зі значенням true дозволяє з файлів модулів отримати доступ до експортів UMD як глобальних значень. Файл модуля - це файл, який містить імпорти, експорти або те і інше. Без цього прапора для використання експорту з модуля UMD слід його явно імпортувати через декларацію про імпорт.
 
-An example use case for this flag would be a web project where you know the particular library (like jQuery or Lodash) will always be available at runtime, but you can’t access it with an import.
+Прикладом використання цього прапора може бути веб-проєкт, де вам відомо, що певна бібліотека (наприклад, jQuery або Lodash) буде завжди доступна під час виконання, але ви не можете отримати до неї доступ за допомогою імпорту.

@@ -1,8 +1,8 @@
 ---
-display: "Disable Solution Searching"
-oneline: " Opt a project out of multi-project reference checking"
+display: "Заборонити пошук по Solution"
+oneline: "Не включати проєкт у пошук посилань"
 ---
 
-When working with [composite TypeScript projects](/docs/handbook/project-references.html), this option provides a way to declare that you do not want a project to be included when using features like _find all references_ or _jump to definition_ in an editor.
+Пр роботі зі [складеними TypeScript-проєктами](/docs/handbook/project-references.html) ця опція дозволяє повідомити компілятору, що ви не хочете робити проєкт доступним для таким можливостей редактора, як _знайти усі посилання_ або _перейти до визначення_.
 
-This flag is something you can use to increase responsiveness in large composite projects.
+З цим флагом ви можете підвищити швидкість відповіді редактора у великих складених проєктах.

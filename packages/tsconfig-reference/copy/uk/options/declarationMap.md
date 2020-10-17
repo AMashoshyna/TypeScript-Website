@@ -1,9 +1,9 @@
 ---
-display: "Declaration Map"
-oneline: "Create sourcemaps for d.ts files"
+display: "Карти деклараційних файлів"
+oneline: "Створити карти коду для файлів d.ts"
 ---
 
-Generates a source map for `.d.ts` files which map back to the original `.ts` source file.
-This will allow editors such as VS Code to go to the original `.ts` file when using features like _Go to Definition_.
+Генерує карту коду для файлів .d.ts, що створює зв'язок з вихідним `.ts`-файлом.
+Це дозволяє редакторам коду, таким як VS Code, переходити до оригінального `.ts`-файлу під час використання таких функцій, як перехід до визначення(_Go to Definition_).
 
-You should strongly consider turning this on if you're using project references.
+Ми наполегливо рекомендуємо увімкнути цю опцію, якщо ви використовуєте посилання на проєкти (project references).
